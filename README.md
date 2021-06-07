@@ -2,9 +2,10 @@
 
 When I cleaned up some old data from Redshift , specifically [Snowplow](https://snowplowanalytics.com/) data I ended up wanting to access the information locally on my Mac, long after I exported it. This turned out to be a bit tricky.
 
-IF I used the (awesome) sqlite3 library, it failed because of the timestamp 
+
+When I used the (awesome) sqlite3 library, it failed because of the timestamp 
 data format. Other tools couln't handle the size because they tried to keep all in memory. Instead I switched to use the Go library at
-`https://github.com/xitongsys/parquet-go` and write some routines.
+`https://github.com/xitongsys/parquet-go` and wrote some routines.
 
 ### INPUT Data
 
