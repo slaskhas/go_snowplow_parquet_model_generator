@@ -1,0 +1,133 @@
+package main
+
+
+type Event struct {
+     App_id  string `parquet:"name=app_id, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Platform  string `parquet:"name=platform, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Etl_tstamp  string `parquet:"name=etl_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Collector_tstamp  string `parquet:"name=collector_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Dvce_created_tstamp  string `parquet:"name=dvce_created_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event  string `parquet:"name=event, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_id  string `parquet:"name=event_id, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Txn_id  int32 `parquet:"name=txn_id, type=INT32"`
+     Name_tracker  string `parquet:"name=name_tracker, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     V_tracker  string `parquet:"name=v_tracker, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     V_collector  string `parquet:"name=v_collector, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     V_etl  string `parquet:"name=v_etl, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     User_id  string `parquet:"name=user_id, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     User_ipaddress  string `parquet:"name=user_ipaddress, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     User_fingerprint  string `parquet:"name=user_fingerprint, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Domain_userid  string `parquet:"name=domain_userid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Domain_sessionidx  int32 `parquet:"name=domain_sessionidx, type=INT32"`
+     Network_userid  string `parquet:"name=network_userid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_country  string `parquet:"name=geo_country, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_region  string `parquet:"name=geo_region, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_city  string `parquet:"name=geo_city, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_zipcode  string `parquet:"name=geo_zipcode, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_latitude  float64 `parquet:"name=geo_latitude, type=DOUBLE"`
+     Geo_longitude  float64 `parquet:"name=geo_longitude, type=DOUBLE"`
+     Geo_region_name  string `parquet:"name=geo_region_name, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ip_isp  string `parquet:"name=ip_isp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ip_organization  string `parquet:"name=ip_organization, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ip_domain  string `parquet:"name=ip_domain, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ip_netspeed  string `parquet:"name=ip_netspeed, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_url  string `parquet:"name=page_url, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_title  string `parquet:"name=page_title, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_referrer  string `parquet:"name=page_referrer, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_urlscheme  string `parquet:"name=page_urlscheme, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_urlhost  string `parquet:"name=page_urlhost, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_urlport  int32 `parquet:"name=page_urlport, type=INT32"`
+     Page_urlpath  string `parquet:"name=page_urlpath, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_urlquery  string `parquet:"name=page_urlquery, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Page_urlfragment  string `parquet:"name=page_urlfragment, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_urlscheme  string `parquet:"name=refr_urlscheme, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_urlhost  string `parquet:"name=refr_urlhost, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_urlport  int32 `parquet:"name=refr_urlport, type=INT32"`
+     Refr_urlpath  string `parquet:"name=refr_urlpath, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_urlquery  string `parquet:"name=refr_urlquery, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_urlfragment  string `parquet:"name=refr_urlfragment, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_medium  string `parquet:"name=refr_medium, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_source  string `parquet:"name=refr_source, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_term  string `parquet:"name=refr_term, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_medium  string `parquet:"name=mkt_medium, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_source  string `parquet:"name=mkt_source, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_term  string `parquet:"name=mkt_term, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_content  string `parquet:"name=mkt_content, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_campaign  string `parquet:"name=mkt_campaign, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Se_category  string `parquet:"name=se_category, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Se_action  string `parquet:"name=se_action, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Se_label  string `parquet:"name=se_label, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Se_property  string `parquet:"name=se_property, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Se_value  float64 `parquet:"name=se_value, type=DOUBLE"`
+     Tr_orderid  string `parquet:"name=tr_orderid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_affiliation  string `parquet:"name=tr_affiliation, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_total  string `parquet:"name=tr_total, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_tax  string `parquet:"name=tr_tax, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_shipping  string `parquet:"name=tr_shipping, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_city  string `parquet:"name=tr_city, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_state  string `parquet:"name=tr_state, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_country  string `parquet:"name=tr_country, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_orderid  string `parquet:"name=ti_orderid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_sku  string `parquet:"name=ti_sku, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_name  string `parquet:"name=ti_name, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_category  string `parquet:"name=ti_category, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_price  string `parquet:"name=ti_price, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_quantity  int32 `parquet:"name=ti_quantity, type=INT32"`
+     Pp_xoffset_min  int32 `parquet:"name=pp_xoffset_min, type=INT32"`
+     Pp_xoffset_max  int32 `parquet:"name=pp_xoffset_max, type=INT32"`
+     Pp_yoffset_min  int32 `parquet:"name=pp_yoffset_min, type=INT32"`
+     Pp_yoffset_max  int32 `parquet:"name=pp_yoffset_max, type=INT32"`
+     Useragent  string `parquet:"name=useragent, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_name  string `parquet:"name=br_name, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_family  string `parquet:"name=br_family, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_version  string `parquet:"name=br_version, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_type  string `parquet:"name=br_type, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_renderengine  string `parquet:"name=br_renderengine, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_lang  string `parquet:"name=br_lang, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_features_pdf  bool `parquet:"name=br_features_pdf, type=BOOLEAN"`
+     Br_features_flash  bool `parquet:"name=br_features_flash, type=BOOLEAN"`
+     Br_features_java  bool `parquet:"name=br_features_java, type=BOOLEAN"`
+     Br_features_director  bool `parquet:"name=br_features_director, type=BOOLEAN"`
+     Br_features_quicktime  bool `parquet:"name=br_features_quicktime, type=BOOLEAN"`
+     Br_features_realplayer  bool `parquet:"name=br_features_realplayer, type=BOOLEAN"`
+     Br_features_windowsmedia  bool `parquet:"name=br_features_windowsmedia, type=BOOLEAN"`
+     Br_features_gears  bool `parquet:"name=br_features_gears, type=BOOLEAN"`
+     Br_features_silverlight  bool `parquet:"name=br_features_silverlight, type=BOOLEAN"`
+     Br_cookies  bool `parquet:"name=br_cookies, type=BOOLEAN"`
+     Br_colordepth  string `parquet:"name=br_colordepth, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Br_viewwidth  int32 `parquet:"name=br_viewwidth, type=INT32"`
+     Br_viewheight  int32 `parquet:"name=br_viewheight, type=INT32"`
+     Os_name  string `parquet:"name=os_name, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Os_family  string `parquet:"name=os_family, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Os_manufacturer  string `parquet:"name=os_manufacturer, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Os_timezone  string `parquet:"name=os_timezone, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Dvce_type  string `parquet:"name=dvce_type, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Dvce_ismobile  bool `parquet:"name=dvce_ismobile, type=BOOLEAN"`
+     Dvce_screenwidth  int32 `parquet:"name=dvce_screenwidth, type=INT32"`
+     Dvce_screenheight  int32 `parquet:"name=dvce_screenheight, type=INT32"`
+     Doc_charset  string `parquet:"name=doc_charset, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Doc_width  int32 `parquet:"name=doc_width, type=INT32"`
+     Doc_height  int32 `parquet:"name=doc_height, type=INT32"`
+     Tr_currency  string `parquet:"name=tr_currency, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_total_base  string `parquet:"name=tr_total_base, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_tax_base  string `parquet:"name=tr_tax_base, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Tr_shipping_base  string `parquet:"name=tr_shipping_base, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_currency  string `parquet:"name=ti_currency, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Ti_price_base  string `parquet:"name=ti_price_base, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Base_currency  string `parquet:"name=base_currency, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Geo_timezone  string `parquet:"name=geo_timezone, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_clickid  string `parquet:"name=mkt_clickid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Mkt_network  string `parquet:"name=mkt_network, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Etl_tags  string `parquet:"name=etl_tags, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Dvce_sent_tstamp  string `parquet:"name=dvce_sent_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_domain_userid  string `parquet:"name=refr_domain_userid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Refr_dvce_tstamp  string `parquet:"name=refr_dvce_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Domain_sessionid  string `parquet:"name=domain_sessionid, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Derived_tstamp  string `parquet:"name=derived_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_vendor  string `parquet:"name=event_vendor, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_name  string `parquet:"name=event_name, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_format  string `parquet:"name=event_format, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_version  string `parquet:"name=event_version, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     Event_fingerprint  string `parquet:"name=event_fingerprint, type=UTF8, encoding=PLAIN_DICTIONARY"`
+     True_tstamp  string `parquet:"name=true_tstamp, type=UTF8, encoding=PLAIN_DICTIONARY"`
+}
